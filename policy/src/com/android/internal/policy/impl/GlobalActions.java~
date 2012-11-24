@@ -113,8 +113,11 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
 
     private Action mSilentModeAction;
     private ToggleAction mAirplaneModeOn;
+<<<<<<< HEAD
     private NavBarAction mNavBarHideToggle;
+=======
     private ToggleAction mExpandDesktopModeOn;
+>>>>>>> 47523cc... Framework: Forward port Expanded desktop capability
 
     private MyAdapter mAdapter;
 
@@ -225,9 +228,11 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
             mSilentModeAction = new SilentModeTriStateAction(mContext, mAudioManager, mHandler);
         }
 
+<<<<<<< HEAD
         mEnableNavBarHideToggle= Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.POWER_DIALOG_SHOW_NAVBAR_HIDE, false);
         mNavBarHideToggle = new NavBarAction(mHandler);
+=======
         mExpandDesktopModeOn = new ToggleAction(
                 R.drawable.ic_lock_expanded_desktop,
                 R.drawable.ic_lock_expanded_desktop,
@@ -248,6 +253,7 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
             }
         };
         onExpandDesktopModeChanged();
+>>>>>>> 47523cc... Framework: Forward port Expanded desktop capability
 
         mAirplaneModeOn = new ToggleAction(
                 R.drawable.ic_lock_airplane_mode,
