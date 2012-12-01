@@ -2842,6 +2842,15 @@ public final class Settings {
         /**
          * Whether to use a separate delay for "slide to unlock" and security
          * lock
+         * NFC polling mode configuration key
+         *
+         * @hide
+         */
+        public static final String NFC_POLLING_MODE = "nfc_polling_mode";
+
+        /**
+         * How long to keep the notification LED on (in milliseconds)
+         * 
          * @hide
          */
         public static final String SCREEN_LOCK_SLIDE_DELAY_TOGGLE = "screen_lock_slide_delay_toggle";
