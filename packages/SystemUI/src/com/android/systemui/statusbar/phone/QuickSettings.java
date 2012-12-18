@@ -504,8 +504,7 @@ class QuickSettings {
                     t = batteryState.pluggedIn
                         ? mContext.getString(R.string.quick_settings_battery_charging_label,
                                 batteryState.batteryLevel)
-                        : mContext.getString(R.string.status_bar_settings_battery_meter_format,
-                                batteryState.batteryLevel);
+                        : mContext.getString(R.string.quick_settings_battery_charged_label);
                 }
                 iv.setImageDrawable(d);
                 iv.setImageLevel(batteryState.batteryLevel);

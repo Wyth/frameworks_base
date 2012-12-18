@@ -66,8 +66,7 @@ public class BatteryTile extends QuickSettingsTile implements BatteryStateChange
             mLabel = charging
                     ? mContext.getString(R.string.quick_settings_battery_charging_label,
                             batteryLevel)
-                    : mContext.getString(R.string.status_bar_settings_battery_meter_format,
-                            batteryLevel);
+                    : mContext.getString(R.string.quick_settings_battery_charged_label);
 
         }
         updateQuickSettings();
