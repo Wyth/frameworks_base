@@ -3080,6 +3080,12 @@ public final class Settings {
         public static final String NAVIGATION_BAR_BUTTONS_QTY = "navigation_bar_buttons_qty";
 
         /**
+         * Weather to minimize lockscreen challenge on screen turned on
+         * @hide
+         */
+        public static final String LOCKSCREEN_MAXIMIZE_WIDGETS = "lockscreen_maximize_widgets";
+
+        /**
          * @hide
          */
         public static final String[] NAVIGATION_CUSTOM_ACTIVITIES = new String[] {
