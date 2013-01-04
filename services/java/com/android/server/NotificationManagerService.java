@@ -699,6 +699,19 @@ public class NotificationManagerService extends INotificationManager.Stub
         }
     }
 
+    static long[] getLongArray(Resources r, int resid, int maxlen, long[] def) {
+        int[] ar = r.getIntArray(resid);
+        if (ar == null) {
+            return def;
+        }
+        final int len = ar.length > maxlen ? maxlen : ar.length;
+        long[] out = new long[len];
+        for (int i=0; i<len; i++) {
+            out[i] = ar[i];
+        }
+        return out;
+    }
+
     NotificationManagerService(Context context, StatusBarManagerService statusBar,
             LightsService lights)
     {
@@ -733,6 +746,16 @@ public class NotificationManagerService extends INotificationManager.Stub
             String[] map = mapping.split("\\|");
             mPackageNameMappings.put(map[0], map[1]);
         }
+
+        mDefaultVibrationPattern = getLongArray(resources,
+                com.android.internal.R.array.config_defaultNotificationVibePattern,
+                VIBRATE_PATTERN_MAXLEN,
+                DEFAULT_VIBRATE_PATTERN);
+
+        mFallbackVibrationPattern = getLongArray(resources,
+                com.android.internal.R.array.config_notificationFallbackVibePattern,
+                VIBRATE_PATTERN_MAXLEN,
+                DEFAULT_VIBRATE_PATTERN);
 
         // Don't start allowing notifications until the setup wizard has run once.
         // After that, including subsequent boots, init with notifications turned on.
@@ -1227,13 +1250,11 @@ public class NotificationManagerService extends INotificationManager.Stub
 
                 // The DEFAULT_VIBRATE flag trumps any custom vibration.
                 final boolean useDefaultVibrate =
-                    (notification.defaults & Notification.DEFAULT_VIBRATE) != 0
-                    || convertSoundToVibration;
+                        (notification.defaults & Notification.DEFAULT_VIBRATE) != 0;
                 if (!(inQuietHours && mQuietHoursStill)
-                        && (useDefaultVibrate || notification.vibrate != null)
+                        && (useDefaultVibrate || convertSoundToVibration || hasCustomVibrate)
                         && !(audioManager.getRingerMode() == AudioManager.RINGER_MODE_SILENT)) {
                     mVibrateNotification = r;
-
                     if (useDefaultVibrate || convertSoundToVibration) {
                         // Escalate privileges so we can use the vibrator even if the notifying app
                         // does not have the VIBRATE permission.
