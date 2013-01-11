@@ -2936,6 +2936,12 @@ public final class Settings {
          */
         public static final String QUIET_HOURS_HAPTIC = "quiet_hours_haptic";
 
+        /**  
+         * Allows to show the background activity back the lockscreen
+         * @hide
+         */
+        public static final String LOCKSCREEN_SEE_THROUGH = "lockscreen_see_through";
+
         /**
          * Whether to remove the vibration from outgoing notifications during quiet hours.
          * @hide
