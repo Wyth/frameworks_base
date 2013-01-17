@@ -307,10 +307,10 @@ public class KeyguardHostView extends KeyguardViewBase {
         minimizeChallengeIfDesired();
     }
 
+<<<<<<< HEAD
     private boolean shouldEnableAddWidget() {
         return numWidgets() < MAX_WIDGETS && mUserSetupCompleted;
-    }
-
+=======
     private void updateBackground() {
         String background = Settings.System.getStringForUser(getContext().getContentResolver(),
                 Settings.System.LOCKSCREEN_BACKGROUND, UserHandle.USER_CURRENT);
@@ -335,6 +335,7 @@ public class KeyguardHostView extends KeyguardViewBase {
             //Ignored would be sufficient
             }
         }
+>>>>>>> bbf6feb... framework: Custom lock screen background [1/2]
     }
 
     private int getDisabledFeatures(DevicePolicyManager dpm) {
