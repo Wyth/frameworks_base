@@ -1554,8 +1554,12 @@ public class ActionBarView extends AbsActionBarView {
             if (mTabScrollView != null) mTabScrollView.setVisibility(GONE);
             if (mSpinner != null) mSpinner.setVisibility(GONE);
             if (mCustomNavView != null) mCustomNavView.setVisibility(GONE);
+<<<<<<< HEAD
+            setHomeButtonEnabled(false, false);
+=======
             mWasHomeEnabled = mUpGoerFive.isEnabled();
             setHomeButtonEnabled(false);
+>>>>>>> 62f3303... Fix regression in expanded action view up
             requestLayout();
             item.setActionViewExpanded(true);
 
