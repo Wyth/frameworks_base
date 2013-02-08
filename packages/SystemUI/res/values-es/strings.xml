@@ -204,15 +204,36 @@
     <string name="status_bar_help_title" msgid="1199237744086469217">"Las notificaciones aparecen aquí"</string>
     <string name="status_bar_help_text" msgid="7874607155052076323">"Desliza el dedo hacia abajo para acceder al contenido."\n"Vuelve a deslizar el dedo hacia abajo para acceder a los controles del sistema."</string>
 
-    <string name="quick_settings_screen_sleep">Bloquear</string>
-    <string name="quick_settings_ringer_on">Sonido ON</string>
-    <string name="quick_settings_ringer_off">Sonido OFF</string>
-    <string name="quick_settings_vibration_on">Vibración ON</string>
-    <string name="quick_settings_vibration_off">Vibración OFF</string>
-    <string name="quick_settings_label_enabled">ON</string>
-    <string name="quick_settings_label_disabled">OFF</string>
-    <string name="quick_settings_ringer_normal">Sonido</string>
-    <string name="quick_settings_lockscreen">Pantalla Bloqueo</string>
+    <!-- CYANOGENMOD ADDITIONS START -->
+
+    <string name="quick_settings_gps">GPS</string>
+    <string name="quick_settings_gps_off">GPS</string>
+    <string name="quick_settings_label_enabled">Activado</string>
+    <string name="quick_settings_label_disabled">Desactivado</string>
+    <string name="quick_settings_lockscreen">Bloqueo</string>
     <string name="quick_settings_network_type">Red móvil</string>
-    <string name="quick_settings_report_bug">Informar de error</string>
+    <string name="quick_settings_nfc">NFC</string>
+    <string name="quick_settings_nfc_off">NFC</string>
+    <string name="quick_settings_profile_label">Perfil</string>
+    <string name="quick_settings_quiethours">Modo tranq.</string>
+    <string name="quick_settings_quiethours_off">Modo tranq.</string>
+    <string name="quick_settings_report_bug">Notificar error</string>
+    <string name="quick_settings_ringer_normal">Sonido</string>
+    <string name="quick_settings_ringer_on">Sonido</string>
+    <string name="quick_settings_ringer_off">Silencio</string>
+    <string name="quick_settings_screen_sleep">Bloquear</string>
+    <string name="quick_settings_screen_timeout">Tiempo espera</string>
+    <string name="quick_settings_sync">Sincronizar</string>
+    <string name="quick_settings_sync_off">Sincronizar</string>
+    <string name="quick_settings_torch">Linterna</string>
+    <string name="quick_settings_torch_off">Linterna</string>
+    <string name="quick_settings_usb_tether_off_label">Desconectado</string>
+    <string name="quick_settings_usb_tether_connected_label">Anclaje USB</string>
+    <string name="quick_settings_usb_tether_on_label">Anclaje USB</string>
+    <string name="quick_settings_vibration_on">Vibración</string>
+    <string name="quick_settings_vibration_off">Vibración</string>
+    <string name="quick_settings_wifiap">Wi-Fi AP</string>
+    <string name="quick_settings_wifiap_off">Wi-Fi AP</string>
+
+    <!-- CYANOGENMOD ADDITIONS END -->
 </resources>
