@@ -2907,6 +2907,12 @@ public final class Settings {
         public static final String PIE_MENU = "pie_menu";
 
         /**
+         * Center Pie? Should default to 1 (yes, center)
+         * @hide
+         */
+        public static final String PIE_CENTER = "pie_center";
+
+        /**
          * Pie search, should default to 1 (yes, show)
          * @hide
          */
@@ -2937,7 +2943,6 @@ public final class Settings {
         /**
          * Whether to use a separate delay for "slide to unlock" and security
          * lock
-<<<<<<< HEAD
          * NFC polling mode configuration key
          *
          * @hide
@@ -2945,9 +2950,8 @@ public final class Settings {
         public static final String NFC_POLLING_MODE = "nfc_polling_mode";
 
         /**
-         * How long to keep the notification LED on (in milliseconds)
-         * 
-=======
+         * Whether to use a separate delay for "slide to unlock" and security
+         * lock
          * Pie status report
          * 0 = Bare
          * 1 = Quick
@@ -3029,9 +3033,8 @@ public final class Settings {
        // PIE COLORS EVERYWHERE! //
 
         /**
-         * whether to hide the signal barss
-         *
->>>>>>> 704af22... PIE: this is an all inclusive commit for pie. Includes everything needed for pie'
+         * How long to keep the notification LED on (in milliseconds)
+         * 
          * @hide
          */
         public static final String SCREEN_LOCK_SLIDE_DELAY_TOGGLE = "screen_lock_slide_delay_toggle";

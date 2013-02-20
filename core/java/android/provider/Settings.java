@@ -3362,13 +3362,6 @@ public final class Settings {
         public static final String STATUSBAR_SIGNAL_TEXT = "statusbar_signal_text";
 
         /**
-         * statusbar signal text color
-         *
-         * @hide
-         */
-        public static final String STATUSBAR_SIGNAL_TEXT_COLOR = "statusbar_signal_text_color";
-
-        /**
          * whether to hide the signal barss
          *
          * @hide
