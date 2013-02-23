@@ -3260,6 +3260,16 @@ public final class Settings {
         public static final String MENU_LOCATION = "menu_location";
 
         /**
+<<<<<<< HEAD
+=======
+         * Pie will not rotate. Should default to 0 (no, rotate)
+         * @hide
+         */
+        public static final String PIE_STICK = "pie_stick";
+
+        /**
+         * Center Pie? Should default to 1 (yes, center)
+>>>>>>> 0648ddc... PIE: option for Pie to maintain its position, disregarding orientation changes (useful for gaming)
          * @hide
          */
         public static final String MENU_VISIBILITY = "menu_visibility";
@@ -3360,13 +3370,6 @@ public final class Settings {
          * @hide
          */
         public static final String STATUSBAR_SIGNAL_TEXT = "statusbar_signal_text";
-
-        /**
-         * statusbar signal text color
-         *
-         * @hide
-         */
-        public static final String STATUSBAR_SIGNAL_TEXT_COLOR = "statusbar_signal_text_color";
 
         /**
          * whether to hide the signal barss
