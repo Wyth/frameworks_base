@@ -366,6 +366,7 @@ public class PieMenu extends FrameLayout {
         mBatteryPathJuice = makeSlice(mStartBattery, mStartBattery, mInnerBatteryRadius, mOuterBatteryRadius, mCenter, 0);
 
         // Colors
+<<<<<<< HEAD
         mEnableColor = (Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_ENABLE_COLOR, 0) == 1);
 
@@ -391,6 +392,35 @@ public class PieMenu extends FrameLayout {
                         Settings.System.PIE_CHEVRON_RIGHT, COLOR_CHEVRON_RIGHT));
             mBatteryJuice.setColorFilter(new PorterDuffColorFilter(extractRGB(Settings.System.getInt(mContext.getContentResolver(),
                         Settings.System.PIE_JUICE, COLOR_BATTERY_JUICE)) | COLOR_OPAQUE_MASK, Mode.SRC_ATOP));
+=======
+        ColorUtils.ColorSettingInfo buttonColorInfo = ColorUtils.getColorSettingInfo(mContext,
+                Settings.System.NAV_BUTTON_COLOR);
+
+        mNotificationPaint.setColor(COLOR_STATUS);
+        mSnapBackground.setColor(COLOR_SNAP_BACKGROUND);
+        mStatusPaint.setColor(COLOR_STATUS);
+
+        if (ColorUtils.getPerAppColorState(mContext)) {
+            ColorUtils.ColorSettingInfo colorInfo;
+            colorInfo = ColorUtils.getColorSettingInfo(mContext, Settings.System.NAV_BAR_COLOR);
+            mPieBackground.setColor(ColorUtils.extractRGB(colorInfo.lastColor) | COLOR_ALPHA_MASK);
+
+            colorInfo = ColorUtils.getColorSettingInfo(mContext, Settings.System.NAV_GLOW_COLOR);
+            mPieSelected.setColor(ColorUtils.extractRGB(colorInfo.lastColor) | COLOR_ALPHA_MASK);
+
+            colorInfo = ColorUtils.getColorSettingInfo(mContext, Settings.System.STATUS_ICON_COLOR);
+            mClockPaint.setColor(colorInfo.lastColor);
+            mAmPmPaint.setColor(colorInfo.lastColor);
+            mClockPaint.setColor(colorInfo.lastColor);
+
+            mChevronBackgroundLeft.setColor(ColorUtils.extractRGB(buttonColorInfo.lastColor) | COLOR_OPAQUE_MASK);
+            mChevronBackgroundRight.setColor(ColorUtils.extractRGB(buttonColorInfo.lastColor) | COLOR_OPAQUE_MASK);
+            mPieOutlines.setColor(ColorUtils.extractRGB(buttonColorInfo.lastColor) | COLOR_ALPHA_MASK);
+            mBatteryJuice.setColorFilter(buttonColorInfo.isLastColorNull ? null :
+                    new PorterDuffColorFilter(ColorUtils.extractRGB(buttonColorInfo.lastColor) | COLOR_OPAQUE_MASK, Mode.SRC_ATOP));
+
+            buttonColorInfo = ColorUtils.getColorSettingInfo(mContext, Settings.System.NAV_BUTTON_COLOR);
+>>>>>>> 4a6bd0d... PIE: narrow down inner arcs for even gaps
             for (PieItem item : mItems) {
                 item.setColor(Settings.System.getInt(mContext.getContentResolver(), Settings.System.PIE_BUTTON_COLOR, COLOR_PIE_BUTTON));
             }
