@@ -278,14 +278,14 @@ public class PieMenu extends FrameLayout {
         // Fetch modes
         boolean expanded = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.EXPANDED_DESKTOP_STATE, 0) == 1;
-        mUseMenuAlways = Settings.System.getInt(mContext.getContentResolver(), Settings.System.PIE_MENU, 0) == 1;
+        mUseMenuAlways = Settings.System.getInt(mContext.getContentResolver(), Settings.System.PIE_MENU, 1) == 1;
         mUseSearch = Settings.System.getInt(mContext.getContentResolver(), Settings.System.PIE_SEARCH, 1) == 1;
         mStatusMode = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_MODE, 2);
         mPieSize = Settings.System.getFloat(mContext.getContentResolver(),
                 Settings.System.PIE_SIZE, 1f);
         mPieGap = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_GAP, 1);
+                Settings.System.PIE_GAP, 3);
         mHapticFeedback = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HAPTIC_FEEDBACK_ENABLED, 1) != 0;
 
@@ -490,6 +490,7 @@ public class PieMenu extends FrameLayout {
 
     private void measureClock(String text) {
         mClockText = text;
+
         mClockTextAmPm = mPolicy.getAmPm();
         mClockTextAmPmSize = mAmPmPaint.measureText(mClockTextAmPm);
         mClockTextTotalOffset = 0;
@@ -776,7 +777,7 @@ public class PieMenu extends FrameLayout {
                     mSnapBackground.setAlpha((int)(snap.alpha + (snap.active ? mAnimators[ANIMATOR_SNAP_GROW].fraction * 80 : 0)));
 
                     canvas.drawCircle (snap.x, snap.y, (snap.active ? mAnimators[ANIMATOR_SNAP_GROW].fraction *
-                            Math.max(getWidth(), getHeight()) : 0), mSnapBackground);
+                            Math.max(getWidth(), getHeight()) * 1.5f : 0), mSnapBackground);
 
                     mSnapBackground.setAlpha((int)(snap.alpha * 2.15f  + (snap.active ? mAnimators[ANIMATOR_SNAP_GROW].fraction * 80 : 0)));
                     int len = (int)(snap.radius * 1.3f + (snap.active ? mAnimators[ANIMATOR_SNAP_GROW].fraction * 500 : 0));
@@ -854,11 +855,16 @@ public class PieMenu extends FrameLayout {
                     state = canvas.save();
                     canvas.rotate(mPanel.getDegree() + 180, mCenter.x, mCenter.y);
                     if (mPolicy.supportsTelephony()) {
-                        canvas.drawTextOnPath(mPolicy.getNetworkProvider(), mStatusPath, 0, mStatusOffset * 3, mStatusPaint);
+                        canvas.drawTextOnPath(mPolicy.getNetworkProvider(), mStatusPath, 0, mStatusOffset * 4, mStatusPaint);
                     }
-                    canvas.drawTextOnPath(mPolicy.getSimpleDate(), mStatusPath, 0, mStatusOffset * 2, mStatusPaint);
-                    canvas.drawTextOnPath(mPolicy.getBatteryLevelReadable(), mStatusPath, 0, mStatusOffset * 1, mStatusPaint);
-                    canvas.drawTextOnPath(mPolicy.getWifiSsid(), mStatusPath, 0, mStatusOffset * 0, mStatusPaint);
+                    canvas.drawTextOnPath(mPolicy.getSimpleDate(), mStatusPath, 0, mStatusOffset * 3, mStatusPaint);
+                    canvas.drawTextOnPath(mPanel.getBar().getNotificationData().size() + " ONGOING EVENTS", mStatusPath, 0, mStatusOffset * 2, mStatusPaint);
+                    canvas.drawTextOnPath("CONNECTION: " + mPolicy.getWifiSsid(), mStatusPath, 0, mStatusOffset * 1, mStatusPaint);
+                    canvas.drawTextOnPath(mPolicy.getBatteryLevelReadable(), mStatusPath, 0, mStatusOffset * 0, mStatusPaint);
+                    canvas.restoreToCount(state);
+
+                    state = canvas.save();
+                    canvas.rotate(mPanel.getDegree() + 180, mCenter.x, mCenter.y);
 
                     // Notifications
                     if (mStatusPanel.getCurrentViewState() != PieStatusPanel.NOTIFICATIONS_PANEL) {

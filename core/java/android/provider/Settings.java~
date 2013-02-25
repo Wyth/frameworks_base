@@ -2901,12 +2901,21 @@ public final class Settings {
         public static final String PIE_CONTROLS = "pie_controls";
 
         /**
-         * Pie menu, should default to 0 (no, show only when needed)
+         * Pie menu, should default to 1 (yes, show)
          * @hide
          */
         public static final String PIE_MENU = "pie_menu";
 
         /**
+<<<<<<< HEAD
+=======
+         * Pie will not rotate. Should default to 1 (yes, do not rotate)
+         * @hide
+         */
+        public static final String PIE_STICK = "pie_stick";
+
+        /**
+>>>>>>> e8a09ae... PIE: compressed layout, stubs, new defaults
          * Center Pie? Should default to 1 (yes, center)
          * @hide
          */
@@ -2918,8 +2927,8 @@ public final class Settings {
          */
         public static final String PIE_SEARCH = "pie_search";
 
-        /*
-         * Pie gap angle, should default to 1
+        /**
+         * Pie gap angle, should default to 3
          * @hide
          */
         public static final String PIE_GAP = "pie_gap";
@@ -3260,16 +3269,12 @@ public final class Settings {
         public static final String MENU_LOCATION = "menu_location";
 
         /**
-<<<<<<< HEAD
-=======
          * Pie will not rotate. Should default to 0 (no, rotate)
          * @hide
          */
         public static final String PIE_STICK = "pie_stick";
 
         /**
-         * Center Pie? Should default to 1 (yes, center)
->>>>>>> 0648ddc... PIE: option for Pie to maintain its position, disregarding orientation changes (useful for gaming)
          * @hide
          */
         public static final String MENU_VISIBILITY = "menu_visibility";
