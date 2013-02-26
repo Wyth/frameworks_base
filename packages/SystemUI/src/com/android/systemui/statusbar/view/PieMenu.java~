@@ -364,12 +364,7 @@ public class PieMenu extends FrameLayout {
         mStartBattery = mPanel.getDegree() + mEmptyAngle + mPieGap;
         mEndBattery = mPanel.getDegree() + (mPieGap <= 2 ? 88 : 90 - mPieGap);
         mBatteryPathBackground = makeSlice(mStartBattery, mEndBattery, mInnerBatteryRadius, mOuterBatteryRadius, mCenter);
-<<<<<<< HEAD
-        mBatteryPathJuice = makeSlice(mStartBattery, mStartBattery + mBatteryLevel * (mEndBattery-mStartBattery) /
-                100, mInnerBatteryRadius, mOuterBatteryRadius, mCenter);
-=======
         mBatteryPathJuice = makeSlice(mStartBattery, mStartBattery, mInnerBatteryRadius, mOuterBatteryRadius, mCenter);
->>>>>>> b8a653d... PIE: improved touchhandling, no emptyangle, better animations
 
         // Colors
         mEnableColor = (Settings.System.getInt(mContext.getContentResolver(),
@@ -451,26 +446,14 @@ public class PieMenu extends FrameLayout {
 
         mAnimators[ANIMATOR_ACC_SPEED15].duration = (int)(mOverallSpeed * 1.5);
         mAnimators[ANIMATOR_ACC_SPEED15].animator.setInterpolator(new AccelerateInterpolator());
-<<<<<<< HEAD
-
-        mAnimators[ANIMATOR_ACC_SPEED30].duration = (int)(mOverallSpeed * 3);
-        mAnimators[ANIMATOR_ACC_SPEED30].animator.setInterpolator(new AccelerateInterpolator());
-=======
         mAnimators[ANIMATOR_ACC_SPEED15].animator.setStartDelay((int)(mInitialSpeed * 1.5));
->>>>>>> b8a653d... PIE: improved touchhandling, no emptyangle, better animations
 
         // Cascade accelerators
         int count = 0;
         for(int i = ANIMATOR_ACC_INC_1; i < ANIMATOR_ACC_INC_15 + 1; i++) {
-<<<<<<< HEAD
-            mAnimators[i].duration = (int)(mOverallSpeed - (mOverallSpeed * 0.8) / (i + 2));
-            mAnimators[i].animator.setInterpolator(new AccelerateInterpolator());
-            mAnimators[i].animator.setStartDelay(i * mOverallSpeed / 10);
-=======
             mAnimators[i].duration = 150;
             mAnimators[i].animator.setInterpolator(new DecelerateInterpolator());
             mAnimators[i].animator.setStartDelay((int)(mInitialSpeed * 1.5f + (++count * 75) ));
->>>>>>> b8a653d... PIE: improved touchhandling, no emptyangle, better animations
         }
 
         // Special purpose

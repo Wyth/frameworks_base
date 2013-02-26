@@ -3266,12 +3266,6 @@ public final class Settings {
         public static final String MENU_LOCATION = "menu_location";
 
         /**
-         * Pie will not rotate. Should default to 0 (no, rotate)
-         * @hide
-         */
-        public static final String PIE_STICK = "pie_stick";
-
-        /**
          * @hide
          */
         public static final String MENU_VISIBILITY = "menu_visibility";

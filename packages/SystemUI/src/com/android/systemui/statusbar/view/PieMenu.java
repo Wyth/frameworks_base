@@ -425,6 +425,7 @@ public class PieMenu extends FrameLayout {
 
         // Determine animationspeed
         mOverallSpeed = BASE_SPEED * (mStatusMode == -1 ? 0 : mStatusMode);
+        int mInitialSpeed = BASE_SPEED * (mStatusMode == -1 ? 0 : mStatusMode) / 2;
 
         // Create animators
         for (int i = 0; i < mAnimators.length; i++) {
